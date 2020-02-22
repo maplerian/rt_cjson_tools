@@ -3,9 +3,12 @@ from building import *
 
 cwd     = GetCurrentDir()
 CPPPATH = [cwd, str(Dir('#'))]
-src = Glob('*.c')
+src = Glob('src/*.c')
 src = Split(src)
 
-group = DefineGroup('cJSON_Tools', src, depend = [''], CPPPATH = CPPPATH)
+if GetDepend(['PKG_USING_RT_CJSON_TOOLS_EXAMPLE']):
+    src += Glob('example/example1.c')
+
+group = DefineGroup('cJSON_Tools', src, depend = ['PKG_USING_RT_CJSON_TOOLS'], CPPPATH = CPPPATH)
 
 Return('group')

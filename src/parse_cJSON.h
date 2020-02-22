@@ -6,7 +6,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-typedef  struct parse_json{
+typedef  struct rt_cjson_parse{
     char *p;
     char *buf;
     uint16_t len;
@@ -20,15 +20,15 @@ typedef  struct parse_json{
     uint8_t middle_brackets_right_flag;         //  ]
     uint8_t double_quotation_marks_left_flag;   //  "(左)
     uint8_t double_quotation_marks_right_flag;  //  "(右)
-} parse_json_t;
+} rt_cjson_parse_t;
 
 //  创建一个 parse json cache 处理缓冲区
-parse_json_t * parse_json_create(uint16_t buf_len);
+rt_cjson_parse_t * rt_cjson_parse_create(uint16_t buf_len);
 //  释放处理缓冲区
-void parse_json_free(parse_json_t *cache);
+void rt_cjson_parse_free(rt_cjson_parse_t *cache);
 //  往 处理缓冲区中添加一个字符
-cJSON * parse_json_ch(parse_json_t *cache ,char ch);
+cJSON * rt_cjson_parse_ch(rt_cjson_parse_t *cache ,char ch);
 //  用处理缓冲区解析字符串
-cJSON * parse_json_str(parse_json_t *cache ,char *str);
+cJSON * rt_cjson_parse_str(rt_cjson_parse_t *cache ,char *str);
 
 #endif

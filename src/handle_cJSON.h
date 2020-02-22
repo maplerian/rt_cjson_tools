@@ -5,33 +5,34 @@
 #include "stdint.h"
 #include "stdlib.h"
 
-typedef uint8_t (*cjson_handle_cb)(cJSON *json);
+typedef uint8_t (*rt_cjson_handle_cb_t)(cJSON *json);
 
-struct cjson_handle_hook
+struct rt_cjson_handle_hook
 {
-    cjson_handle_cb cb;
-    struct cjson_handle_hook *next;
+    rt_cjson_handle_cb_t cb;
+    struct rt_cjson_handle_hook *next;
 };
-struct cjson_handle
+
+typedef struct rt_cjson_handle
 {
     char *name;
-    struct cjson_handle_hook *hook;
-    struct cjson_handle *list;
-    struct cjson_handle *next;
-};
+    struct rt_cjson_handle_hook *hook;
+    struct rt_cjson_handle *list;
+    struct rt_cjson_handle *next;
+} * rt_cjson_handle_t;
 
 //  处理类 接口
-void cjson_handle(cJSON *json);
-void cjson_handle_from_item(cJSON *json,char *item_name);
+void rt_cjson_handle(cJSON *json);
+void rt_cjson_handle_from_item(cJSON *json,char *item_name);
 
 //  功能类 接口(添加，查找，删除)
-struct cjson_handle *cjson_handle_add(char *name);
-struct cjson_handle *cjson_handle_add_to_parent(struct cjson_handle *parent, char *name);
-struct cjson_handle *cjson_handle_find(struct cjson_handle *handle, char *name);
-void cjson_handle_remove(char *name);
+rt_cjson_handle_t rt_cjson_handle_add(char *name);
+rt_cjson_handle_t rt_cjson_handle_add_to_parent(rt_cjson_handle_t parent, char *name);
+rt_cjson_handle_t rt_cjson_handle_find(rt_cjson_handle_t handle, char *name);
+void rt_cjson_handle_remove(char *name);
 
 //  功能类 接口(添加钩子函数)
-void cjson_handle_add_hook(struct cjson_handle *handle, cjson_handle_cb cb);
-struct cjson_handle *cjson_handle_add_hook_to_parent(struct cjson_handle *parent, char *name, cjson_handle_cb cb);
+void rt_cjson_handle_add_hook(rt_cjson_handle_t handle, rt_cjson_handle_cb_t cb);
+rt_cjson_handle_t rt_cjson_handle_add_hook_to_parent(rt_cjson_handle_t parent, char *name, rt_cjson_handle_cb_t cb);
 
 #endif
