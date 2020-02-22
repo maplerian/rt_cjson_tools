@@ -24,18 +24,18 @@ if PKG_USING_RT_CJSON_TOOLS
        string
        default "latest"    if PKG_USING_RT_CJSON_TOOLS_LATEST_VERSION
 
-    config PKG_USING_RT_CJSON_TOOLS_EXAMPLE
+    config RT_CJSON_TOOLS_ENABLE_EXAMPLE
         bool "Enable example"
         default n
 
-    if PKG_USING_RT_CJSON_TOOLS_EXAMPLE
+    if RT_CJSON_TOOLS_ENABLE_EXAMPLE
 
-        config PKG_RT_CJSON_TOOLS_EXAMPLE_STACK_SZIE
+        config RT_CJSON_TOOLS_EXAMPLE_STACK_SZIE
             int "Example thread stack size"
             range 256 10240
             default 1024
 
-        config PKG_RT_CJSON_TOOLS_EXAMPLE_PRIORITY
+        config RT_CJSON_TOOLS_EXAMPLE_PRIORITY
             int "Example thread priority"
             range 1 31
             default 15

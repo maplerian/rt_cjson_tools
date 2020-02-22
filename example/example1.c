@@ -5,11 +5,11 @@
 #define DBG_LVL DBG_INFO
 #include <rtdbg.h>
 
-#ifndef PKG_RT_CJSON_TOOLS_EXAMPLE_STACK_SZIE
-#define PKG_RT_CJSON_TOOLS_EXAMPLE_STACK_SZIE 1024
+#ifndef RT_CJSON_TOOLS_EXAMPLE_STACK_SZIE
+#define RT_CJSON_TOOLS_EXAMPLE_STACK_SZIE 1024
 #endif
-#ifndef PKG_RT_CJSON_TOOLS_EXAMPLE_PRIORITY
-#define PKG_RT_CJSON_TOOLS_EXAMPLE_PRIORITY 15
+#ifndef RT_CJSON_TOOLS_EXAMPLE_PRIORITY
+#define RT_CJSON_TOOLS_EXAMPLE_PRIORITY 15
 #endif
 
 #define HELLO_JSON_DATA "{\"type\":\"api\",\"api\":\"hello\"}"
@@ -49,8 +49,8 @@ int rt_cjson_tools_example1_init(void)
         "cjson_t_e1",
         rt_cjson_tools_example1_entry,
         RT_NULL,
-        PKG_RT_CJSON_TOOLS_EXAMPLE_STACK_SZIE,
-        PKG_RT_CJSON_TOOLS_EXAMPLE_PRIORITY,
+        RT_CJSON_TOOLS_EXAMPLE_STACK_SZIE,
+        RT_CJSON_TOOLS_EXAMPLE_PRIORITY,
         10);
     if (thread == RT_NULL)
     {
