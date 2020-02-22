@@ -33,7 +33,13 @@ rt_cjson_tools package 遵循 Apachev2.0许可，详见 `LICENSE` 文件。
 git clone https://gitee.com/MapleRian/rt_cjson_tools.git
 ```
 
+###### 在 ENV 中的开启
 
+```
+RT-Thread online packages  --->
+     IoT - internet of things  --->
+        -*- cJSON Tools: Provide JSON data parsing and perform corresponding actions
+```
 
 #### 3. 注意事项
 
