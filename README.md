@@ -1,7 +1,9 @@
 # cJSON Tools
 
 #### 1. 简介
-用于 RT-Thread 的 cJSON工具库
+------
+
+用于 RT-Thread 的 cJSON工具库，主要提供 **解析JSON数据并根据JSON数据调用函数** 的功能
 
 #### 1.1 目录结构
 
@@ -19,7 +21,17 @@ rt_cjson_tools package 遵循 Apachev2.0许可，详见 `LICENSE` 文件。
 
 - RT_Thread 3.1.3+
 
+
+
 #### 2.  获取方式
+
+------
+
+###### 通过 git 克隆
+
+```bash
+git clone https://gitee.com/MapleRian/rt_cjson_tools.git
+```
 
 
 
@@ -33,5 +45,5 @@ rt_cjson_tools package 遵循 Apachev2.0许可，详见 `LICENSE` 文件。
 #### 4. 联系方式
 
 - 维护：maplerian
-- 主页：https://gitee.com/MapleRian/rt_cjson_tools/tree/master
+- 主页：https://gitee.com/MapleRian/rt_cjson_tools
 

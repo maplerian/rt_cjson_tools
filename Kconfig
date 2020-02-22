@@ -8,7 +8,7 @@ if PKG_USING_RT_CJSON_TOOLS
 
     config PKG_RT_CJSON_TOOLS_PATH
         string
-        default "/rt_cjson_tools"
+        default "/packages/iot/rt_cjson_tools"
 
     choice
         prompt "Version"
