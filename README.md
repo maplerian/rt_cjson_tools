@@ -2,3 +2,7 @@
 
 #### 介绍
 用于 RT-Thread 的 cJSON工具库
+
+#### 依赖
+libc
+

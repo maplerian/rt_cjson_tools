@@ -2,7 +2,7 @@ import rtconfig
 from building import *
 
 cwd     = GetCurrentDir()
-CPPPATH = [cwd + '/src']
+CPPPATH = [cwd + '/inc']
 src = Glob('src/*.c')
 src = Split(src)
 
